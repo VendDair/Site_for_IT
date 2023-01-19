@@ -61,3 +61,15 @@ const observer = new IntersectionObserver(entries => {
 
 
 hiddenElements.forEach((el) => observer.observe(el))
+
+// Get the image element
+var img = document.getElementById("cursor");
+
+document.onmousemove = function(event) {
+  var x = event.pageX;
+  var y = event.pageY;
+  img.style.left = (x - img.width/2) + "px";
+  img.style.top = (y - img.height/2) + "px";
+}
+
+
