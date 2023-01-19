@@ -1,0 +1,159 @@
+@import "wave.sass"
+    
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+body
+    background-color: black
+    font-family: Inter
+    font-weight: bold
+    transition: .5s
+.container1
+    display: flex
+    height: 100vh
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    position: relative
+    p
+        color: white
+        margin-bottom: 20px
+    h4
+        color: gray
+    .text
+        display: flex
+        
+            
+    h2
+        color: white
+        font-size: 40px
+        background-color: orange
+        padding: 10px 1px 10px 
+        animation: 2s container1_text infinite
+        transition: 0.3s
+        &:first-child
+            border-radius: 10px 0 0 10px
+            padding-left: 15px
+        &:last-child
+            border-radius: 0 10px 10px 0
+            padding-right: 15px
+        &:nth-child(5)
+            padding-left: 10px
+        &:nth-child(10)
+            padding-left: 10px
+        &:nth-child(15)
+            padding-left: 10px
+        &:nth-child(18)
+            padding-left: 10px
+            
+            
+            
+    h4
+        margin-top: 20px
+        font-size: 20px
+    h5
+        position: absolute
+        color: white
+        top: 92.5vh
+        font-size: 20px
+
+@keyframes container1_text
+    0%
+        background-color: orange
+    50%
+        background-color: violet
+    100%
+        background-color: orange
+
+.container2
+    display: flex
+    place-items: center
+    justify-content: center
+    height: 100vh
+    position: relative
+    margin: 0
+    padding: 0
+    background-color: #2a59b0e9
+    p
+        color: white
+    .text_container1
+        position: absolute
+        transform: translateX(-25vw)
+    .text_container2
+        position: absolute
+        transform: translateX(25vw)
+    .text_container1, .text_container2
+        font-size: 2vw
+    .text_container3
+        font-size: 3vw
+        @media screen and (max-width: 600px)
+            font-size: 4vw
+
+@mixin image
+    width: 30vmin
+@mixin transition
+    transition: transform 0.8s cubic-bezier(.3,.78,.3,1.01)
+@mixin cardHover
+    &:nth-child(1)
+        transform: translateX(-160%) rotate(-10deg)
+    &:nth-child(2)
+        transform: translate(-100%, -2%) rotate(2deg)
+    &:nth-child(3)
+        transform: translate(-20%, -2%) rotate(-4deg)
+    &:nth-child(4)
+        transform: translate(60%, -2%) rotate(4deg)
+    &:nth-child(5)
+        transform: translate(120%, 3%) rotate(10deg)
+        
+        
+
+.container3
+    height: 100vh
+    display: grid
+    place-items: center
+    background-color: black
+    position: relative
+    p
+        position: absolute
+        color: white
+        font-size: 40px
+        top: 10vh
+.card-group, .card
+    width: 30vmin
+    aspect-ratio: 5/7
+    
+    
+.card
+    position: absolute
+    @include transition
+    
+    &:nth-child(1)
+        transform: translateX(3%) rotate(-4deg)
+        z-index: 1
+    &:nth-child(2)
+        transform: translate(-3%, 0%) rotate(-1deg)
+        z-index: 4
+    &:nth-child(3)
+        transform: translate(-4%, -2%) rotate(5deg)
+        z-index: 3
+    &:nth-child(4)
+        transform: translate(-6%, 0) rotate(-3deg)
+        z-index: 2
+    &:nth-child(5)
+        z-index: 5
+        
+.card-group
+    &:hover > .card
+        @include cardHover
+        
+.image
+    @include image
+    border-radius: 20px
+.hidden
+    opacity: 0
+    transition: all 0.7s
+    transform: translateX(-50%)
+.show
+    opacity: 1
+    transform: translateX(0)
