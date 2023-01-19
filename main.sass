@@ -1,4 +1,22 @@
 @import "wave.sass"
+
+// All mixins
+@mixin image
+    width: 30vmin
+@mixin transition
+    transition: transform 0.8s cubic-bezier(.3,.78,.3,1.01)
+@mixin cardHover
+    &:nth-child(1)
+        transform: translateX(-160%) rotate(-10deg)
+    &:nth-child(2)
+        transform: translate(-100%, -2%) rotate(2deg)
+    &:nth-child(3)
+        transform: translate(-20%, -2%) rotate(-4deg)
+    &:nth-child(4)
+        transform: translate(60%, -2%) rotate(4deg)
+    &:nth-child(5)
+        transform: translate(120%, 3%) rotate(10deg)
+        
     
 *
     padding: 0
@@ -13,9 +31,11 @@ body
 #cursor
     position: absolute
     opacity: 0.5
-    width: 100px
-    height: 100px
+    width: 70px
+    height: 70px
     transition: .2s
+        
+        
 .container1
     display: flex
     height: 100vh
@@ -97,24 +117,6 @@ body
         @media screen and (max-width: 600px)
             font-size: 4vw
 
-@mixin image
-    width: 30vmin
-@mixin transition
-    transition: transform 0.8s cubic-bezier(.3,.78,.3,1.01)
-@mixin cardHover
-    &:nth-child(1)
-        transform: translateX(-160%) rotate(-10deg)
-    &:nth-child(2)
-        transform: translate(-100%, -2%) rotate(2deg)
-    &:nth-child(3)
-        transform: translate(-20%, -2%) rotate(-4deg)
-    &:nth-child(4)
-        transform: translate(60%, -2%) rotate(4deg)
-    &:nth-child(5)
-        transform: translate(120%, 3%) rotate(10deg)
-        
-        
-
 .container3
     height: 100vh
     display: grid
@@ -130,6 +132,8 @@ body
         position: absolute
         color: white
         top: 2.5vw
+    &:hover
+        cursor: default
 .card-group, .card
     width: 30vmin
     aspect-ratio: 5/7
@@ -157,6 +161,10 @@ body
 .card-group
     &:hover > .card
         @include cardHover
+    &:hover > #cursor
+        @include cardHover
+        
+        
         
 .image
     @include image

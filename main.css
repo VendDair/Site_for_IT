@@ -61,8 +61,8 @@ body {
 #cursor {
   position: absolute;
   opacity: 0.5;
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
@@ -218,6 +218,9 @@ body {
   color: white;
   top: 2.5vw;
 }
+.container3:hover {
+  cursor: default;
+}
 
 .card-group, .card {
   width: 30vmin;
@@ -272,6 +275,26 @@ body {
           transform: translate(60%, -2%) rotate(4deg);
 }
 .card-group:hover > .card:nth-child(5) {
+  -webkit-transform: translate(120%, 3%) rotate(10deg);
+          transform: translate(120%, 3%) rotate(10deg);
+}
+.card-group:hover > #cursor:nth-child(1) {
+  -webkit-transform: translateX(-160%) rotate(-10deg);
+          transform: translateX(-160%) rotate(-10deg);
+}
+.card-group:hover > #cursor:nth-child(2) {
+  -webkit-transform: translate(-100%, -2%) rotate(2deg);
+          transform: translate(-100%, -2%) rotate(2deg);
+}
+.card-group:hover > #cursor:nth-child(3) {
+  -webkit-transform: translate(-20%, -2%) rotate(-4deg);
+          transform: translate(-20%, -2%) rotate(-4deg);
+}
+.card-group:hover > #cursor:nth-child(4) {
+  -webkit-transform: translate(60%, -2%) rotate(4deg);
+          transform: translate(60%, -2%) rotate(4deg);
+}
+.card-group:hover > #cursor:nth-child(5) {
   -webkit-transform: translate(120%, 3%) rotate(10deg);
           transform: translate(120%, 3%) rotate(10deg);
 }
