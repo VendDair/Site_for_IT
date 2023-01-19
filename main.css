@@ -197,11 +197,16 @@ body {
   background-color: black;
   position: relative;
 }
-.container3 p {
+.container3 .text_up {
   position: absolute;
   color: white;
   font-size: 40px;
   top: 10vh;
+}
+.container3 .text_down {
+  position: absolute;
+  color: white;
+  top: 2.5vw;
 }
 
 .card-group, .card {
