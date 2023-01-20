@@ -322,6 +322,7 @@ body {
   position: fixed;
   width: 100px;
   height: 100px;
+  z-index: 2;
 }
 .follow_arrow .arrow_image {
   position: absolute;
