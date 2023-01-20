@@ -317,3 +317,22 @@ body {
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
+
+.follow_arrow {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+}
+.follow_arrow .arrow_image {
+  position: absolute;
+  width: 100px;
+}
+.follow_arrow .arrow {
+  color: white;
+  font-size: 40px;
+  position: absolute;
+  left: 30%;
+  top: 25%;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}

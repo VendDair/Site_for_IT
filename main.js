@@ -44,32 +44,53 @@ styles(20, "#28cf7c");
 styles(21, "#3a2496");
 styles(22, "#492dc0");
 
+const hiddenElements = document.querySelectorAll(".hidden");
 
-const hiddenElements = document.querySelectorAll(".hidden")
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  },
+  {
+    threshold: 0.05,
+  }
+);
 
-const observer = new IntersectionObserver(entries => {
-   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-        entry.target.classList.add("show")
-    } else {
-        entry.target.classList.remove("show")
-    }
-   })
-}, {
-  threshold: 0.05
-})
-
-
-hiddenElements.forEach((el) => observer.observe(el))
+hiddenElements.forEach((el) => observer.observe(el));
 
 // Get the image element
 var img = document.getElementById("cursor");
 
-document.onmousemove = function(event) {
+document.onmousemove = function (event) {
   var x = event.pageX;
   var y = event.pageY;
-  img.style.left = (x - img.width/2) + "px";
-  img.style.top = (y - img.height/2) + "px";
+  img.style.left = x - img.width / 2 + "px";
+  img.style.top = y - img.height / 2 + "px";
+};
+
+const anchor = document.getElementById("follow_container")
+const rekt = anchor.getBoundingClientRect();
+const anchorX = rekt.left + rekt.width / 2;
+const anchorY = rekt.top + rekt.height / 2;
+document.addEventListener("mousemove", (e) => {
+  const mouseX = e.clientX;
+  const mouseY = e.clientY;
+
+  const angleDeg = angle(mouseX, mouseY, anchorX, anchorY);
+
+  const eye = document.getElementById("arrow")
+  eye.style.transform = `rotate(${90 + angleDeg}deg)`
+});
+
+function angle(cx, cy, ex, ey) {
+  const dy = ey - cy;
+  const dx = ex - cx;
+  const rad = Math.atan2(dy, dx);
+  const deg = (rad * 180) / Math.PI;
+  return deg;
 }
-
-
