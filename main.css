@@ -320,20 +320,119 @@ body {
 
 .follow_arrow {
   position: fixed;
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   z-index: 2;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .follow_arrow .arrow_image {
   position: absolute;
-  width: 100px;
+  width: 70px;
 }
 .follow_arrow .arrow {
   color: white;
   font-size: 40px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.follow_arrow {
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  z-index: 2;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.follow_arrow .arrow_image {
   position: absolute;
-  left: 30%;
-  top: 25%;
+  width: 70px;
+}
+.follow_arrow .arrow {
+  color: white;
+  font-size: 40px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.follow_arrow1 {
+  position: fixed;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  z-index: 2;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.follow_arrow1 .arrow_image {
+  position: absolute;
+  width: 70px;
+}
+.follow_arrow1 .arrow {
+  color: white;
+  font-size: 40px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.follow_arrow2 {
+  position: fixed;
+  bottom: 0;
+  width: 70px;
+  height: 70px;
+  z-index: 2;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.follow_arrow2 .arrow_image {
+  position: absolute;
+  width: 70px;
+}
+.follow_arrow2 .arrow {
+  color: white;
+  font-size: 40px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.follow_arrow3 {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  z-index: 2;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.follow_arrow3 .arrow_image {
+  position: absolute;
+  width: 70px;
+}
+.follow_arrow3 .arrow {
+  color: white;
+  font-size: 40px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }

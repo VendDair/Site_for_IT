@@ -73,7 +73,7 @@ document.onmousemove = function (event) {
   img.style.top = y - img.height / 2 + "px";
 };
 
-const anchor = document.getElementById("follow_container")
+const anchor = document.getElementById("follow_container");
 const rekt = anchor.getBoundingClientRect();
 const anchorX = rekt.left + rekt.width / 2;
 const anchorY = rekt.top + rekt.height / 2;
@@ -83,8 +83,12 @@ document.addEventListener("mousemove", (e) => {
 
   const angleDeg = angle(mouseX, mouseY, anchorX, anchorY);
 
-  const eye = document.getElementById("arrow")
-  eye.style.transform = `rotate(${90 + angleDeg}deg)`
+  const eyes = document.querySelectorAll("#arrow")
+  console.log(eyes);
+  eyes[0].style.transform = `rotate(${90 + angleDeg}deg)`;
+  eyes[1].style.transform = `rotate(${-120 - angleDeg}deg)`;
+  eyes[2].style.transform = `rotate(${0 + angleDeg}deg)`;
+  eyes[3].style.transform = `rotate(${-45 - angleDeg}deg)`;
 });
 
 function angle(cx, cy, ex, ey) {
