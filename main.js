@@ -146,21 +146,26 @@ document.addEventListener("mousemove", (e) => {
 });
 
 const ball = document.querySelector("#ball");
+ball.style.backgroundColor = "blue"
+const new_ball = document.createElement("img");
 var vw70 = window.innerWidth * 0.7;
 var vh70 = window.innerHeight * 0.7;
 
 const container4 = document.querySelector(".container4");
 const container4_wave = document.querySelector(".container4_wave");
 const container4_wave_shape_fill = container4_wave.querySelector(".shape-fill");
-ball.addEventListener("mouseover", (e) => {
-  var color = Math.floor(Math.random() * colorList.length);
-  container4.style.backgroundColor = colorList[color];
-  container4_wave_shape_fill.style.fill = colorList[color];
-  var pxx = Math.floor(Math.random() * vw70) + window.innerWidth * 0.1;
-  var pxy = Math.floor(Math.random() * vh70) + window.innerHeight * 0.1;
-  ball.style.top = pxy + "px";
-  ball.style.left = `${pxx}px`;
-});
+if (ball !== null) {
+  ball.addEventListener("mouseover", (e) => {
+    var color = Math.floor(Math.random() * colorList.length);
+    container4.style.backgroundColor = colorList[color];
+    container4_wave_shape_fill.style.fill = colorList[color];
+    var pxx = Math.floor(Math.random() * vw70) + window.innerWidth * 0.1;
+    var pxy = Math.floor(Math.random() * vh70) + window.innerHeight * 0.1;
+    ball.style.top = pxy + "px";
+    ball.style.left = `${pxx}px`;
+  });
+}
+
 
 function angle(cx, cy, ex, ey) {
   const dy = ey - cy;
@@ -185,7 +190,7 @@ function toggle() {
   const jovana = document.querySelector(".container3_jovana");
   const jotaro = document.querySelector(".container4_jotaro");
   const jolyne = document.querySelector(".container4_jolyne");
-  const ball = document.querySelector("#ball");
+
   var checkBox = document.getElementById("dio");
   if (checkBox.checked === true) {
     image.src = "dio.png";
@@ -194,14 +199,51 @@ function toggle() {
     jovana.style.display = "block";
     jotaro.style.display = "block";
     jolyne.style.display = "block";
-    ball.src = "dio.png";
+    ball.id = "left1000vw";
+    const ball_after_check = document.querySelector("#left1000vw")
+    const ball_after_check_styles = getComputedStyle(ball_after_check)
+    if (ball_after_check_styles.getPropertyValue("top") && ball_after_check_styles.getPropertyValue("left")) {
+      ball_after_check.style.top = ""
+      ball_after_check.style.left = ""
+    }
+    new_ball.src = "dio.png";
+    new_ball.alt = "dio";
+    new_ball.id = "ball";
+    new_ball.style.backgroundColor = "transparent";
+    container4.appendChild(new_ball);
+    new_ball.addEventListener("mouseover", (e) => {
+      var color = Math.floor(Math.random() * colorList.length);
+      container4.style.backgroundColor = colorList[color];
+      container4_wave_shape_fill.style.fill = colorList[color];
+      var pxx = Math.floor(Math.random() * vw70) + window.innerWidth * 0.1;
+      var pxy = Math.floor(Math.random() * vh70) + window.innerHeight * 0.1;
+      new_ball.style.top = pxy + "px";
+      new_ball.style.left = `${pxx}px`;
+    });
   } else {
     image.src = "blue_dot.png";
-    ball.src = "blue_dot.png";
     dio.style.display = "none";
     pucci.style.display = "none";
     jovana.style.display = "none";
     jotaro.style.display = "none";
     jolyne.style.display = "none";
+    ball.id = "ball"
+    new_ball.remove();
+  }
+}
+var activator_for_container4_check = false;
+
+function container4_check() {
+  activator_for_container4_check = !activator_for_container4_check
+  if (activator_for_container4_check) {
+    ball.style.backgroundColor = "transparent"
+    if (new_ball !== null) {
+      new_ball.style.opacity = "0"
+    }
+  } else {
+    ball.style.backgroundColor = "blue"
+    if (new_ball !== null) {
+      new_ball.style.opacity = "1"
+    }
   }
 }

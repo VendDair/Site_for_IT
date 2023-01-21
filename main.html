@@ -188,15 +188,20 @@
     <img class="container3_jovana hidden" src="jovana.png" alt="jovana" />
 
     <div class="container4">
+      <p class="container4_check_text">invisible mode</p>
+      <label class="container4_check">
+        <input type="checkbox" onchange="container4_check()" />
+        <div class="checkmark"></div>
+      </label>
       <h2 class="hidden">Ball Game</h2>
       <h3 class="rules">Rules</h3>
       <div class="rules_container">
         <p>You need to hover the ball and you will see action</p>
       </div>
-      <img class="hidden" id="ball" src="blue_dot.png" alt="ball" />
-      <img class="container4_jotaro hidden" src="jotaro.png" alt="jotaro">
-      <img class="container4_jolyne hidden" src="jolyne.png" alt="jolyne">
-
+      <canvas class="hidden" id="ball"></canvas>
+      <div class="ball"></div>
+      <img class="container4_jotaro hidden" src="jotaro.png" alt="jotaro" />
+      <img class="container4_jolyne hidden" src="jolyne.png" alt="jolyne" />
     </div>
   </body>
   <script defer src="main-dist.js"></script>

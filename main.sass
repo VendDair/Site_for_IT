@@ -1,5 +1,6 @@
 @import "wave.sass"
 @import "jojo_mode.sass"
+@import "container4_input.sass"
 
 // All mixins
 @mixin image
@@ -259,9 +260,8 @@ body
         position: absolute
         top: 5vh
         color: white
-        left: 50vw
-        transform: translateX(-50%)
         font-size: 35px
+        font-size: 2vw
     h3
         color: grey
         position: absolute
@@ -274,6 +274,7 @@ body
         height: 100px
         transition: all .5s 
         z-index: 100
+        border-radius: 50%
     .rules
         animation: rules .5s infinite linear alternate
 
@@ -293,3 +294,6 @@ body
         color: grey
     100%
         color: lightgrey
+#left1000vw
+    position: absolute
+    left: 1000vw
