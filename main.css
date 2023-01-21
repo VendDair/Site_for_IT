@@ -42,6 +42,28 @@
   fill: #000000;
 }
 
+.container4_wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.container4_wave svg {
+  position: relative;
+  display: block;
+  width: calc(118% + 1.3px);
+  height: 161px;
+}
+
+.container4_wave .shape-fill {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  fill: #67001A;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -207,19 +229,27 @@ body {
   background-color: black;
   position: relative;
 }
-.container3 .text_up {
+.container3 .container-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background-color: black;
+  position: relative;
+}
+
+.text_up {
   position: absolute;
   color: white;
   font-size: 40px;
   top: 10vh;
 }
-.container3 .text_down {
+
+.text_down {
   position: absolute;
   color: white;
   top: 2.5vw;
-}
-.container3:hover {
-  cursor: default;
 }
 
 .card-group, .card {
@@ -435,4 +465,36 @@ body {
   font-size: 40px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+.container4 {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background-color: #67001A;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.container4 h2 {
+  position: absolute;
+  top: 5vh;
+  color: white;
+  left: 50vw;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.container4 img {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }

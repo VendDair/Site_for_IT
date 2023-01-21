@@ -123,17 +123,22 @@ body
     place-items: center
     background-color: black
     position: relative
-    .text_up
-        position: absolute
-        color: white
-        font-size: 40px
-        top: 10vh
-    .text_down
-        position: absolute
-        color: white
-        top: 2.5vw
-    &:hover
-        cursor: default
+    .container-wrapper
+        height: 100vh
+        width: 100vw
+        display: grid
+        place-items: center
+        background-color: black
+        position: relative
+.text_up
+    position: absolute
+    color: white
+    font-size: 40px
+    top: 10vh
+.text_down
+    position: absolute
+    color: white
+    top: 2.5vw
 .card-group, .card
     width: 30vmin
     aspect-ratio: 5/7
@@ -256,3 +261,22 @@ body
         color: white
         font-size: 40px
         transition: .2s
+.container4
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+    background-color: #67001A
+    transition: .5s
+    h2
+        position: absolute
+        top: 5vh
+        color: white
+        left: 50vw
+        transform: translateX(-50%)
+    img
+        position: absolute
+        width: 50px
+        height: 50px
+        transition: all .5s 

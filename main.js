@@ -83,12 +83,49 @@ document.addEventListener("mousemove", (e) => {
 
   const angleDeg = angle(mouseX, mouseY, anchorX, anchorY);
 
-  const eyes = document.querySelectorAll("#arrow")
-  console.log(eyes);
+  const eyes = document.querySelectorAll("#arrow");
   eyes[0].style.transform = `rotate(${90 + angleDeg}deg)`;
   eyes[1].style.transform = `rotate(${-120 - angleDeg}deg)`;
   eyes[2].style.transform = `rotate(${0 + angleDeg}deg)`;
   eyes[3].style.transform = `rotate(${-45 - angleDeg}deg)`;
+});
+
+const ball = document.querySelector("#ball");
+var vw90 = window.innerWidth * 0.8;
+var vh90 = window.innerHeight * 0.8;
+var colorList = [
+  "#D5E9DC",
+  "#A87E85",
+  "#03C03C",
+  "#D3BEC2",
+  "#DF9FB7",
+  "#E5D2E9",
+  "#F8A3CC",
+  "#FFE4E1",
+  "#95BAF7",
+  "#67001A",
+  "#2C4E31",
+  "#666666",
+  "#133337",
+  "#E6A91D",
+  "#EEEE44",
+  "#194d33",
+  "#28cf7c",
+  "#3a2496",
+  "#492dc0",
+];
+const container4 = document.querySelector(".container4");
+const container4_wave = document.querySelector(".container4_wave");
+const container4_wave_shape_fill = container4_wave.querySelector(".shape-fill")
+ball.addEventListener("mouseover", (e) => {
+  var color = Math.floor(Math.random() * colorList.length);
+  container4.style.backgroundColor = colorList[color];
+  container4_wave_shape_fill.style.fill = colorList[color]
+  var pxx = Math.floor(Math.random() * vw90) + window.innerWidth * 0.1;
+  var pxy = Math.floor(Math.random() * vh90) + window.innerHeight * 0.1;
+  ball.style.top = pxy + "px";
+  ball.style.left = `${pxx}px`;
+  console.log(pxx, pxy);
 });
 
 function angle(cx, cy, ex, ey) {
