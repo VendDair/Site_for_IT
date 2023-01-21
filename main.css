@@ -44,11 +44,12 @@
 
 .container4_wave {
   position: absolute;
-  bottom: 0;
+  bottom: -200vh;
   left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  z-index: 2;
 }
 
 .container4_wave svg {
@@ -62,6 +63,101 @@
   -webkit-transition: 0.5s;
   transition: 0.5s;
   fill: #67001A;
+}
+
+.switch {
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  --false: #E81B1B;
+  --true: #009068;
+}
+
+input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 2rem;
+  width: 3.5rem;
+  background-color: #fff;
+  position: relative;
+  border-radius: 0.2em;
+  cursor: pointer;
+}
+
+input[type=checkbox]::before {
+  content: "";
+  display: block;
+  height: 1.9em;
+  width: 1.9em;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 1.25em;
+  background-color: var(--false);
+  border-radius: 0.2em;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+input[type=checkbox]:checked::before {
+  background-color: var(--true);
+  left: calc(100% - 1.25em);
+}
+
+.text_jojo_mode {
+  position: absolute;
+  width: 100px;
+  -webkit-transform: translate(10vh, 0.5vh);
+          transform: translate(10vh, 0.5vh);
+}
+
+.container1_dio {
+  position: absolute;
+  aspect-ratio: 9/16;
+  bottom: 0;
+  left: 0;
+  display: none;
+}
+
+.container2_pucci {
+  position: absolute;
+  aspect-ratio: 9/16;
+  height: 20vw;
+  -webkit-transform: rotate(180deg) scaleX(-1);
+          transform: rotate(180deg) scaleX(-1);
+  bottom: -55vw;
+  right: 10vw;
+  z-index: 2;
+  display: none;
+}
+
+.container3_jovana {
+  z-index: 0;
+  position: absolute;
+  aspect-ratio: 9/16;
+  height: 50vh;
+  bottom: -200vh;
+  left: 0;
+  display: none;
+}
+
+.container4_jotaro {
+  position: absolute;
+  aspect-ratio: 9/16;
+  height: 200px;
+  top: 5vh;
+  right: 20vh;
+  display: none;
+}
+
+.container4_jolyne {
+  position: absolute;
+  aspect-ratio: 16/16;
+  height: 200px;
+  top: 5vh;
+  left: 20vh;
+  display: none;
 }
 
 * {
@@ -352,30 +448,7 @@ body {
   position: fixed;
   width: 70px;
   height: 70px;
-  z-index: 2;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.follow_arrow .arrow_image {
-  position: absolute;
-  width: 70px;
-}
-.follow_arrow .arrow {
-  color: white;
-  font-size: 40px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-.follow_arrow {
-  position: fixed;
-  width: 70px;
-  height: 70px;
-  z-index: 2;
+  z-index: 100;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -399,7 +472,7 @@ body {
   right: 0;
   width: 70px;
   height: 70px;
-  z-index: 2;
+  z-index: 100;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -423,7 +496,7 @@ body {
   bottom: 0;
   width: 70px;
   height: 70px;
-  z-index: 2;
+  z-index: 100;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -448,7 +521,7 @@ body {
   right: 0;
   width: 70px;
   height: 70px;
-  z-index: 2;
+  z-index: 100;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -500,12 +573,13 @@ body {
   -webkit-transform: translateX(20vh);
           transform: translateX(20vh);
 }
-.container4 img {
+.container4 #ball {
   position: absolute;
   width: 100px;
   height: 100px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  z-index: 100;
 }
 .container4 .rules {
   -webkit-animation: rules 0.5s infinite linear alternate;

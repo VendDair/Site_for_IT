@@ -46,6 +46,10 @@
       <div id="arrow" class="arrow">↓</div>
     </div>
     <div class="container1 hidden">
+      <label class="switch">
+        <p class="text_jojo_mode">jojo mode</p>
+        <input id="dio" type="checkbox" onchange="toggle()" />
+      </label>
       <p>You can hover it ↓</p>
       <div class="text">
         <h2 class="container1_text">S</h2>
@@ -73,9 +77,9 @@
         <h2 class="container1_text">f</h2>
       </div>
 
-      <!--<h2>Site with some ui stuff</h2> -->
       <h4>All Code are made by one person</h4>
       <h5>Scroll down to see</h5>
+      <img class="container1_dio hidden" src="dio.png" alt="dio" />
     </div>
     <!-- container -->
     <div class="custom-shape-divider-bottom-1674066955">
@@ -126,6 +130,8 @@
         </svg>
       </div>
     </div>
+    <img class="container2_pucci hidden" src="pucci.png" alt="pucci" />
+
     <div class="container3">
       <div class="container-wrapper hidden">
         <p class="text_up">Hover images for action</p>
@@ -165,21 +171,22 @@
           </div>
         </div>
       </div>
-
-      <div class="container4_wave">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-            class="shape-fill"
-          ></path>
-        </svg>
-      </div>
     </div>
+    <div class="container4_wave">
+      <svg
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+          class="shape-fill"
+        ></path>
+      </svg>
+    </div>
+    <img class="container3_jovana hidden" src="jovana.png" alt="jovana" />
+
     <div class="container4">
       <h2 class="hidden">Ball Game</h2>
       <h3 class="rules">Rules</h3>
@@ -187,7 +194,10 @@
         <p>You need to hover the ball and you will see action</p>
       </div>
       <img class="hidden" id="ball" src="blue_dot.png" alt="ball" />
+      <img class="container4_jotaro hidden" src="jotaro.png" alt="jotaro">
+      <img class="container4_jolyne hidden" src="jolyne.png" alt="jolyne">
+
     </div>
   </body>
-  <script defer src="main.js"></script>
+  <script defer src="main-dist.js"></script>
 </html>

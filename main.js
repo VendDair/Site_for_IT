@@ -178,3 +178,30 @@ rules.addEventListener("mouseover", () => {
 rules.addEventListener("mouseout", () => {
   rules_describe.style.display = "none";
 });
+function toggle() {
+  const image = document.getElementById("cursor");
+  const dio = document.querySelector(".container1_dio");
+  const pucci = document.querySelector(".container2_pucci");
+  const jovana = document.querySelector(".container3_jovana");
+  const jotaro = document.querySelector(".container4_jotaro");
+  const jolyne = document.querySelector(".container4_jolyne");
+  const ball = document.querySelector("#ball");
+  var checkBox = document.getElementById("dio");
+  if (checkBox.checked === true) {
+    image.src = "dio.png";
+    dio.style.display = "block";
+    pucci.style.display = "block";
+    jovana.style.display = "block";
+    jotaro.style.display = "block";
+    jolyne.style.display = "block";
+    ball.src = "dio.png";
+  } else {
+    image.src = "blue_dot.png";
+    ball.src = "blue_dot.png";
+    dio.style.display = "none";
+    pucci.style.display = "none";
+    jovana.style.display = "none";
+    jotaro.style.display = "none";
+    jolyne.style.display = "none";
+  }
+}

@@ -1,4 +1,5 @@
 @import "wave.sass"
+@import "jojo_mode.sass"
 
 // All mixins
 @mixin image
@@ -186,22 +187,7 @@ body
     position: fixed
     width: 70px
     height: 70px
-    z-index: 2
-    display: grid
-    place-items: center
-    align-items: center
-    .arrow_image
-        position: absolute
-        width: 70px
-    .arrow
-        color: white
-        font-size: 40px
-        transition: .2s
-.follow_arrow
-    position: fixed
-    width: 70px
-    height: 70px
-    z-index: 2
+    z-index: 100
     display: grid
     place-items: center
     align-items: center
@@ -217,7 +203,7 @@ body
     right: 0
     width: 70px
     height: 70px
-    z-index: 2
+    z-index: 100
     display: grid
     place-items: center
     align-items: center
@@ -233,7 +219,7 @@ body
     bottom: 0
     width: 70px
     height: 70px
-    z-index: 2
+    z-index: 100
     display: grid
     place-items: center
     align-items: center
@@ -250,7 +236,7 @@ body
     right: 0
     width: 70px
     height: 70px
-    z-index: 2
+    z-index: 100
     display: grid
     place-items: center
     align-items: center
@@ -282,11 +268,12 @@ body
         font-size: 25px
         top: 6vh
         transform: translateX(20vh)
-    img
+    #ball
         position: absolute
         width: 100px
         height: 100px
         transition: all .5s 
+        z-index: 100
     .rules
         animation: rules .5s infinite linear alternate
 
