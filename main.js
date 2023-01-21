@@ -146,8 +146,8 @@ document.addEventListener("mousemove", (e) => {
 });
 
 const ball = document.querySelector("#ball");
-var vw90 = window.innerWidth * 0.8;
-var vh90 = window.innerHeight * 0.8;
+var vw70 = window.innerWidth * 0.7;
+var vh70 = window.innerHeight * 0.7;
 
 const container4 = document.querySelector(".container4");
 const container4_wave = document.querySelector(".container4_wave");
@@ -156,11 +156,10 @@ ball.addEventListener("mouseover", (e) => {
   var color = Math.floor(Math.random() * colorList.length);
   container4.style.backgroundColor = colorList[color];
   container4_wave_shape_fill.style.fill = colorList[color];
-  var pxx = Math.floor(Math.random() * vw90) + window.innerWidth * 0.1;
-  var pxy = Math.floor(Math.random() * vh90) + window.innerHeight * 0.1;
+  var pxx = Math.floor(Math.random() * vw70) + window.innerWidth * 0.1;
+  var pxy = Math.floor(Math.random() * vh70) + window.innerHeight * 0.1;
   ball.style.top = pxy + "px";
   ball.style.left = `${pxx}px`;
-  console.log(pxx, pxy);
 });
 
 function angle(cx, cy, ex, ey) {
