@@ -9,11 +9,66 @@ function sleep(ms) {
   );
 }
 
-function styles(index, color) {
-  container1_texts[index].addEventListener("mouseover", function () {
-    container1_texts[index].style.color = color;
-    container1_texts[index].style.fontSize = "42px";
-    body.style.backgroundColor = color;
+var colorList = [
+  "#D5E9DC",
+  "#A87E85",
+  "#03C03C",
+  "#D3BEC2",
+  "#DF9FB7",
+  "#E5D2E9",
+  "#F8A3CC",
+  "#FFE4E1",
+  "#95BAF7",
+  "#67001A",
+  "#2C4E31",
+  "#666666",
+  "#133337",
+  "#E6A91D",
+  "#EEEE44",
+  "#194d33",
+  "#28cf7c",
+  "#3a2496",
+  "#492dc0",
+  "#5d8aa8",
+  "#f0f8ff",
+  "#e32636",
+  "#efdecd",
+  "#e52b50",
+  "#ffbf00",
+  "#ff033e",
+  "#9966cc",
+  "#a4c639",
+  "#f2f3f4",
+  "#cd9575",
+  "#915c83",
+  "#faebd7",
+  "#008000",
+  "#8db600",
+  "#fbceb1",
+  "#00ffff",
+  "#7fffd4",
+  "#4b5320",
+  "#e9d66b",
+  "#b2beb5",
+  "#87a96b",
+  "#ff9966",
+  "#a52a2a",
+  "#fdee00",
+  "#6e7f80",
+  "#ff2052",
+  "#007fff",
+  "#f0ffff",
+  "#89cff0",
+];
+
+function styles(index, col) {
+  document.addEventListener("mousemove", () => {
+    var color = Math.floor(Math.random() * colorList.length);
+    container1_texts[index].addEventListener("mouseover", function () {
+      container1_texts[index].style.color = colorList[color];
+      container1_texts[index].style.fontSize = "42px";
+      body.style.backgroundColor = colorList[color];
+    });
   });
   container1_texts[index].addEventListener("mouseout", function () {
     setTimeout(() => {
@@ -93,27 +148,7 @@ document.addEventListener("mousemove", (e) => {
 const ball = document.querySelector("#ball");
 var vw90 = window.innerWidth * 0.8;
 var vh90 = window.innerHeight * 0.8;
-var colorList = [
-  "#D5E9DC",
-  "#A87E85",
-  "#03C03C",
-  "#D3BEC2",
-  "#DF9FB7",
-  "#E5D2E9",
-  "#F8A3CC",
-  "#FFE4E1",
-  "#95BAF7",
-  "#67001A",
-  "#2C4E31",
-  "#666666",
-  "#133337",
-  "#E6A91D",
-  "#EEEE44",
-  "#194d33",
-  "#28cf7c",
-  "#3a2496",
-  "#492dc0",
-];
+
 const container4 = document.querySelector(".container4");
 const container4_wave = document.querySelector(".container4_wave");
 const container4_wave_shape_fill = container4_wave.querySelector(".shape-fill");
@@ -144,8 +179,3 @@ rules.addEventListener("mouseover", () => {
 rules.addEventListener("mouseout", () => {
   rules_describe.style.display = "none";
 });
-
-// const
-// if (window.scrollY > 0) {
-
-// }
