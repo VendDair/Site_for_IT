@@ -490,11 +490,29 @@ body {
   left: 50vw;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  font-size: 35px;
+}
+.container4 h3 {
+  color: grey;
+  position: absolute;
+  font-size: 25px;
+  top: 6vh;
+  left: 55vw;
 }
 .container4 img {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+}
+.container4 .rules_container {
+  display: none;
+}
+.container4 .rules_container p {
+  color: white;
+  position: absolute;
+  top: 10vh;
+  -webkit-transform: translateX(-3vw);
+          transform: translateX(-3vw);
 }

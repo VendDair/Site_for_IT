@@ -135,3 +135,13 @@ function angle(cx, cy, ex, ey) {
   const deg = (rad * 180) / Math.PI;
   return deg;
 }
+
+
+const rules = document.querySelector(".rules")
+const rules_describe = document.querySelector(".rules_container")
+rules.addEventListener("mouseover", () => {
+  rules_describe.style.display = "block"
+})
+rules.addEventListener("mouseout", () => {
+  rules_describe.style.display = "none"
+})
