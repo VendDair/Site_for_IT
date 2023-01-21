@@ -288,6 +288,9 @@ body
         width: 100px
         height: 100px
         transition: all .5s 
+    .rules
+        animation: rules .3s infinite linear alternate
+
     .rules_container
         display: none
 
@@ -297,3 +300,10 @@ body
             top: 10vh
             transform: translateX(-3vw)
 
+
+
+@keyframes rules
+    0%
+        color: grey
+    100%
+        color: lightgrey

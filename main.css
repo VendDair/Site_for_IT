@@ -506,6 +506,10 @@ body {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
+.container4 .rules {
+  -webkit-animation: rules 0.3s infinite linear alternate;
+          animation: rules 0.3s infinite linear alternate;
+}
 .container4 .rules_container {
   display: none;
 }
@@ -515,4 +519,22 @@ body {
   top: 10vh;
   -webkit-transform: translateX(-3vw);
           transform: translateX(-3vw);
+}
+
+@-webkit-keyframes rules {
+  0% {
+    color: grey;
+  }
+  100% {
+    color: lightgrey;
+  }
+}
+
+@keyframes rules {
+  0% {
+    color: grey;
+  }
+  100% {
+    color: lightgrey;
+  }
 }

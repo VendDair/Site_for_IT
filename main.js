@@ -116,11 +116,11 @@ var colorList = [
 ];
 const container4 = document.querySelector(".container4");
 const container4_wave = document.querySelector(".container4_wave");
-const container4_wave_shape_fill = container4_wave.querySelector(".shape-fill")
+const container4_wave_shape_fill = container4_wave.querySelector(".shape-fill");
 ball.addEventListener("mouseover", (e) => {
   var color = Math.floor(Math.random() * colorList.length);
   container4.style.backgroundColor = colorList[color];
-  container4_wave_shape_fill.style.fill = colorList[color]
+  container4_wave_shape_fill.style.fill = colorList[color];
   var pxx = Math.floor(Math.random() * vw90) + window.innerWidth * 0.1;
   var pxy = Math.floor(Math.random() * vh90) + window.innerHeight * 0.1;
   ball.style.top = pxy + "px";
@@ -136,12 +136,16 @@ function angle(cx, cy, ex, ey) {
   return deg;
 }
 
-
-const rules = document.querySelector(".rules")
-const rules_describe = document.querySelector(".rules_container")
+const rules = document.querySelector(".rules");
+const rules_describe = document.querySelector(".rules_container");
 rules.addEventListener("mouseover", () => {
-  rules_describe.style.display = "block"
-})
+  rules_describe.style.display = "block";
+});
 rules.addEventListener("mouseout", () => {
-  rules_describe.style.display = "none"
-})
+  rules_describe.style.display = "none";
+});
+
+// const
+// if (window.scrollY > 0) {
+
+// }
