@@ -199,55 +199,6 @@ body
         color: white
         font-size: 40px
         transition: .2s
-.follow_arrow1
-    position: fixed
-    right: 0
-    width: 70px
-    height: 70px
-    z-index: 100
-    display: grid
-    place-items: center
-    align-items: center
-    .arrow_image
-        position: absolute
-        width: 70px
-    .arrow
-        color: white
-        font-size: 40px
-        transition: .2s
-.follow_arrow2
-    position: fixed
-    bottom: 0
-    width: 70px
-    height: 70px
-    z-index: 100
-    display: grid
-    place-items: center
-    align-items: center
-    .arrow_image
-        position: absolute
-        width: 70px
-    .arrow
-        color: white
-        font-size: 40px
-        transition: .2s
-.follow_arrow3
-    position: fixed
-    bottom: 0
-    right: 0
-    width: 70px
-    height: 70px
-    z-index: 100
-    display: grid
-    place-items: center
-    align-items: center
-    .arrow_image
-        position: absolute
-        width: 70px
-    .arrow
-        color: white
-        font-size: 40px
-        transition: .2s
 .container4
     height: 100vh
     display: flex
@@ -286,7 +237,25 @@ body
             position: absolute
             top: 10vh
             transform: translateX(-3vw)
-
+        
+.top_button
+    position: fixed
+    color: white
+    display: grid
+    place-items: center
+    align-items: center
+    font-size: 30px
+    width: 70px
+    height: 70px
+    transition: all .5s 
+    z-index: 100
+    border-radius: 50%
+    background-color: blue
+    bottom: 2vh
+    right: 2vh
+    display: none
+    &:hover
+        cursor: pointer
 
 
 @keyframes rules

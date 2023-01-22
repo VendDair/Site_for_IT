@@ -114,7 +114,23 @@ const rekt = anchor.getBoundingClientRect();
 const anchorX = rekt.left + rekt.width / 2;
 const anchorY = rekt.top + rekt.height / 2;
 
+const top_button = document.querySelector(".top_button");
+top_button.addEventListener("click", function () {
+  window.scroll(0, -1000);
+});
+document.addEventListener("wheel", function (event) {
+  if (window.scrollY > 200) {
+    top_button.style.display = "grid";
+  } else {
+    top_button.style.display = "none";
+  }
+});
 document.onmousemove = function (event) {
+  if (window.scrollY > 200) {
+    top_button.style.display = "grid";
+  } else {
+    top_button.style.display = "none";
+  }
   var x = event.pageX;
   var y = event.pageY;
   cursor.style.left = x - cursor.width / 2 + "px";
@@ -124,11 +140,8 @@ document.onmousemove = function (event) {
 
   const angleDeg = angle(mouseX, mouseY, anchorX, anchorY);
 
-  const arrows = document.querySelectorAll("#arrow");
-  arrows[0].style.transform = `rotate(${90 + angleDeg}deg)`;
-  arrows[1].style.transform = `rotate(${-120 - angleDeg}deg)`;
-  arrows[2].style.transform = `rotate(${0 + angleDeg}deg)`;
-  arrows[3].style.transform = `rotate(${-45 - angleDeg}deg)`;
+  const arrow = document.querySelector("#arrow");
+  arrow.style.transform = `rotate(${90 + angleDeg}deg)`;
 };
 
 const ball = document.querySelector("#ball");
@@ -235,15 +248,14 @@ function container4_check() {
   activator_for_container4_check = !activator_for_container4_check;
   if (activator_for_container4_check) {
     ball.style.opacity = "0.05";
-    ball.style.backgroundColor = "rgba(30,144,255, 0.7)"
+    ball.style.backgroundColor = "rgba(30,144,255, 0.7)";
 
     if (new_ball !== null) {
       new_ball.style.opacity = "0.05";
-
     }
   } else {
     ball.style.opacity = "1";
-    ball.style.backgroundColor = "blue"
+    ball.style.backgroundColor = "blue";
 
     if (new_ball !== null) {
       new_ball.style.opacity = "1";

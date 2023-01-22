@@ -538,79 +538,6 @@ body {
   transition: 0.2s;
 }
 
-.follow_arrow1 {
-  position: fixed;
-  right: 0;
-  width: 70px;
-  height: 70px;
-  z-index: 100;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.follow_arrow1 .arrow_image {
-  position: absolute;
-  width: 70px;
-}
-.follow_arrow1 .arrow {
-  color: white;
-  font-size: 40px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-.follow_arrow2 {
-  position: fixed;
-  bottom: 0;
-  width: 70px;
-  height: 70px;
-  z-index: 100;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.follow_arrow2 .arrow_image {
-  position: absolute;
-  width: 70px;
-}
-.follow_arrow2 .arrow {
-  color: white;
-  font-size: 40px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-.follow_arrow3 {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 70px;
-  height: 70px;
-  z-index: 100;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.follow_arrow3 .arrow_image {
-  position: absolute;
-  width: 70px;
-}
-.follow_arrow3 .arrow {
-  color: white;
-  font-size: 40px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
 .container4 {
   height: 100vh;
   display: -webkit-box;
@@ -664,6 +591,31 @@ body {
   top: 10vh;
   -webkit-transform: translateX(-3vw);
           transform: translateX(-3vw);
+}
+
+.top_button {
+  position: fixed;
+  color: white;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 30px;
+  width: 70px;
+  height: 70px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  z-index: 100;
+  border-radius: 50%;
+  background-color: blue;
+  bottom: 2vh;
+  right: 2vh;
+  display: none;
+}
+.top_button:hover {
+  cursor: pointer;
 }
 
 @-webkit-keyframes rules {
