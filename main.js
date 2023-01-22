@@ -1,14 +1,6 @@
 const container1_texts = document.getElementsByClassName("container1_text");
 const body = document.querySelector("body");
 
-function sleep(ms) {
-  return new Promise((resolve) =>
-    setTimeout(() => {
-      resolve(ms);
-    }, ms)
-  );
-}
-
 var colorList = [
   "#D5E9DC",
   "#A87E85",
@@ -61,7 +53,7 @@ var colorList = [
   "#89cff0",
 ];
 
-function styles(index, col) {
+function styles_for_container1_texts(index) {
   document.addEventListener("mousemove", () => {
     var color = Math.floor(Math.random() * colorList.length);
     container1_texts[index].addEventListener("mouseover", function () {
@@ -79,28 +71,22 @@ function styles(index, col) {
   });
 }
 
-styles(0, "#D5E9DC");
-styles(1, "#A87E85");
-styles(2, "#03C03C");
-styles(3, "#D3BEC2");
-styles(5, "#DF9FB7");
-styles(6, "#E5D2E9");
-styles(7, "#F8A3CC");
-styles(8, "#FFE4E1");
-styles(10, "#95BAF7");
-styles(11, "#67001A");
-styles(12, "#2C4E31");
-styles(13, "#666666");
-styles(15, "#133337");
-styles(16, "#E6A91D");
-styles(18, "#EEEE44");
-styles(19, "#194d33");
-styles(20, "#28cf7c");
-styles(21, "#3a2496");
-styles(22, "#492dc0");
+for (var i = 0; i <= 22; i++) {
+  styles_for_container1_texts(i);
+}
 
-const hiddenElements = document.querySelectorAll(".hidden");
+function sleep(ms) {
+  return new Promise((resolve) =>
+    setTimeout(() => {
+      resolve(ms);
+    }, ms)
+  );
+}
 
+// Hidden elements animation on apear
+const hiddenElements = document.querySelectorAll(".hidden"); // get all hiden elements
+
+// Script to show hidden element on screen when its available
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -116,56 +102,59 @@ const observer = new IntersectionObserver(
   }
 );
 
+// Observe hidden elements
 hiddenElements.forEach((el) => observer.observe(el));
+// End of hidden elements script
 
 // Get the image element
-var img = document.getElementById("cursor");
-
-document.onmousemove = function (event) {
-  var x = event.pageX;
-  var y = event.pageY;
-  img.style.left = x - img.width / 2 + "px";
-  img.style.top = y - img.height / 2 + "px";
-};
+var cursor = document.getElementById("cursor");
 
 const anchor = document.getElementById("follow_container");
 const rekt = anchor.getBoundingClientRect();
 const anchorX = rekt.left + rekt.width / 2;
 const anchorY = rekt.top + rekt.height / 2;
-document.addEventListener("mousemove", (e) => {
-  const mouseX = e.clientX;
-  const mouseY = e.clientY;
+
+document.onmousemove = function (event) {
+  var x = event.pageX;
+  var y = event.pageY;
+  cursor.style.left = x - cursor.width / 2 + "px";
+  cursor.style.top = y - cursor.height / 2 + "px";
+  const mouseX = event.clientX;
+  const mouseY = event.clientY;
 
   const angleDeg = angle(mouseX, mouseY, anchorX, anchorY);
 
-  const eyes = document.querySelectorAll("#arrow");
-  eyes[0].style.transform = `rotate(${90 + angleDeg}deg)`;
-  eyes[1].style.transform = `rotate(${-120 - angleDeg}deg)`;
-  eyes[2].style.transform = `rotate(${0 + angleDeg}deg)`;
-  eyes[3].style.transform = `rotate(${-45 - angleDeg}deg)`;
-});
+  const arrows = document.querySelectorAll("#arrow");
+  arrows[0].style.transform = `rotate(${90 + angleDeg}deg)`;
+  arrows[1].style.transform = `rotate(${-120 - angleDeg}deg)`;
+  arrows[2].style.transform = `rotate(${0 + angleDeg}deg)`;
+  arrows[3].style.transform = `rotate(${-45 - angleDeg}deg)`;
+};
 
 const ball = document.querySelector("#ball");
-ball.style.backgroundColor = "blue"
+ball.style.backgroundColor = "blue";
 const new_ball = document.createElement("img");
 var vw70 = window.innerWidth * 0.7;
 var vh70 = window.innerHeight * 0.7;
+
+function ball_game(element) {
+  var color = Math.floor(Math.random() * colorList.length);
+  container4.style.backgroundColor = colorList[color];
+  container4_wave_shape_fill.style.fill = colorList[color];
+  var pxx = Math.floor(Math.random() * vw70) + window.innerWidth * 0.1;
+  var pxy = Math.floor(Math.random() * vh70) + window.innerHeight * 0.1;
+  element.style.top = pxy + "px";
+  element.style.left = `${pxx}px`;
+}
 
 const container4 = document.querySelector(".container4");
 const container4_wave = document.querySelector(".container4_wave");
 const container4_wave_shape_fill = container4_wave.querySelector(".shape-fill");
 if (ball !== null) {
   ball.addEventListener("mouseover", (e) => {
-    var color = Math.floor(Math.random() * colorList.length);
-    container4.style.backgroundColor = colorList[color];
-    container4_wave_shape_fill.style.fill = colorList[color];
-    var pxx = Math.floor(Math.random() * vw70) + window.innerWidth * 0.1;
-    var pxy = Math.floor(Math.random() * vh70) + window.innerHeight * 0.1;
-    ball.style.top = pxy + "px";
-    ball.style.left = `${pxx}px`;
+    ball_game(ball);
   });
 }
-
 
 function angle(cx, cy, ex, ey) {
   const dy = ey - cy;
@@ -183,67 +172,76 @@ rules.addEventListener("mouseover", () => {
 rules.addEventListener("mouseout", () => {
   rules_describe.style.display = "none";
 });
+
+// Toggle for jojo mode
 function toggle() {
-  const image = document.getElementById("cursor");
+  // Get all jojos
   const dio = document.querySelector(".container1_dio");
   const pucci = document.querySelector(".container2_pucci");
   const jovana = document.querySelector(".container3_jovana");
   const jotaro = document.querySelector(".container4_jotaro");
   const jolyne = document.querySelector(".container4_jolyne");
 
+  // Get checkbox
   var checkBox = document.getElementById("dio");
   if (checkBox.checked === true) {
-    image.src = "dio.png";
+    // change cursor to jojo and add jojos to screen
+    cursor.src = "dio.png";
     dio.style.display = "block";
     pucci.style.display = "block";
     jovana.style.display = "block";
     jotaro.style.display = "block";
     jolyne.style.display = "block";
-    ball.id = "left1000vw";
-    const ball_after_check = document.querySelector("#left1000vw")
-    const ball_after_check_styles = getComputedStyle(ball_after_check)
-    if (ball_after_check_styles.getPropertyValue("top") && ball_after_check_styles.getPropertyValue("left")) {
-      ball_after_check.style.top = ""
-      ball_after_check.style.left = ""
+    ball.id = "left1000vw"; // Move original ball from ball game with 1000vw
+    // Check ball with it new id (left1000vw)
+    const ball_after_check = document.querySelector("#left1000vw");
+    // Check if it had top and left style
+    const ball_after_check_styles = getComputedStyle(ball_after_check);
+    if (
+      ball_after_check_styles.getPropertyValue("top") &&
+      ball_after_check_styles.getPropertyValue("left")
+    ) {
+      // delete top and left
+      ball_after_check.style.top = "";
+      ball_after_check.style.left = "";
     }
+    // Create new ball when jojo mode is activated
     new_ball.src = "dio.png";
     new_ball.alt = "dio";
     new_ball.id = "ball";
     new_ball.style.backgroundColor = "transparent";
     container4.appendChild(new_ball);
+    // Add ball activity for it
     new_ball.addEventListener("mouseover", (e) => {
-      var color = Math.floor(Math.random() * colorList.length);
-      container4.style.backgroundColor = colorList[color];
-      container4_wave_shape_fill.style.fill = colorList[color];
-      var pxx = Math.floor(Math.random() * vw70) + window.innerWidth * 0.1;
-      var pxy = Math.floor(Math.random() * vh70) + window.innerHeight * 0.1;
-      new_ball.style.top = pxy + "px";
-      new_ball.style.left = `${pxx}px`;
+      ball_game(new_ball);
     });
   } else {
-    image.src = "blue_dot.png";
+    // Bring cursor to original and hide all jojos and remove dio ball at the end
+    cursor.src = "blue_dot.png";
     dio.style.display = "none";
     pucci.style.display = "none";
     jovana.style.display = "none";
     jotaro.style.display = "none";
     jolyne.style.display = "none";
-    ball.id = "ball"
+    ball.id = "ball";
     new_ball.remove();
   }
 }
+
+// Check if invisible mode is active
 var activator_for_container4_check = false;
 
 function container4_check() {
-  activator_for_container4_check = !activator_for_container4_check
+  activator_for_container4_check = !activator_for_container4_check;
   if (activator_for_container4_check) {
-    ball.style.backgroundColor = "transparent"
+    ball.style.backgroundColor = "transparent";
     if (new_ball !== null) {
-      new_ball.style.opacity = "0"
+      new_ball.style.opacity = "0";
     }
   } else {
-    ball.style.backgroundColor = "blue"
+    ball.style.backgroundColor = "blue";
     if (new_ball !== null) {
-      new_ball.style.opacity = "1"
+      new_ball.style.opacity = "1";
     }
   }
 }
