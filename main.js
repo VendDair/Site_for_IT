@@ -179,6 +179,7 @@ function ball_game(element) {
   var color = Math.floor(Math.random() * colorList.length);
   container4.style.backgroundColor = colorList[color];
   container4_wave_shape_fill.style.fill = colorList[color];
+  container5_wave_shape_fill.style.fill = colorList[color];
   var pxx = Math.floor(Math.random() * vw70) + window.innerWidth * 0.1;
   var pxy = Math.floor(Math.random() * vh70) + window.innerHeight * 0.1;
   element.style.top = pxy + "px";
@@ -187,6 +188,8 @@ function ball_game(element) {
 
 const container4 = document.querySelector(".container4");
 const container4_wave = document.querySelector(".container4_wave");
+const container5_wave = document.querySelector(".container5_wave")
+const container5_wave_shape_fill = container5_wave.querySelector(".shape-fill")
 const container4_wave_shape_fill = container4_wave.querySelector(".shape-fill");
 if (ball !== null) {
   ball.addEventListener("mouseover", (e) => {
