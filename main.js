@@ -234,12 +234,17 @@ var activator_for_container4_check = false;
 function container4_check() {
   activator_for_container4_check = !activator_for_container4_check;
   if (activator_for_container4_check) {
-    ball.style.backgroundColor = "transparent";
+    ball.style.opacity = "0.05";
+    ball.style.backgroundColor = "rgba(30,144,255, 0.7)"
+
     if (new_ball !== null) {
-      new_ball.style.opacity = "0";
+      new_ball.style.opacity = "0.05";
+
     }
   } else {
-    ball.style.backgroundColor = "blue";
+    ball.style.opacity = "1";
+    ball.style.backgroundColor = "blue"
+
     if (new_ball !== null) {
       new_ball.style.opacity = "1";
     }
