@@ -254,6 +254,7 @@ body
     bottom: 2vh
     right: 2vh
     display: none
+    animation: top_button 2s infinite linear alternate
     &:hover
         cursor: pointer
 
@@ -263,6 +264,11 @@ body
         color: grey
     100%
         color: lightgrey
+@keyframes top_button
+    0%
+        background-color: blue
+    100%
+        background-color: red
 #left1000vw
     position: absolute
     left: 1000vw

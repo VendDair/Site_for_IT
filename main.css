@@ -635,6 +635,8 @@ body {
   bottom: 2vh;
   right: 2vh;
   display: none;
+  -webkit-animation: top_button 2s infinite linear alternate;
+          animation: top_button 2s infinite linear alternate;
 }
 .top_button:hover {
   cursor: pointer;
@@ -655,6 +657,22 @@ body {
   }
   100% {
     color: lightgrey;
+  }
+}
+@-webkit-keyframes top_button {
+  0% {
+    background-color: blue;
+  }
+  100% {
+    background-color: red;
+  }
+}
+@keyframes top_button {
+  0% {
+    background-color: blue;
+  }
+  100% {
+    background-color: red;
   }
 }
 #left1000vw {

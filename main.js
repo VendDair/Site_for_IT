@@ -75,7 +75,7 @@ var imageList = [
   "https://wallpapercave.com/wp/wp3262696.jpg",
   "https://images.hdqwalls.com/download/1/branches-tree-night-blue-cool-weather-ww.jpg",
   "https://wallpapertag.com/wallpaper/full/0/8/6/264654-top-abstract-wallpaper-1920x1080-1920x1080-for-phone.jpg",
-  "http://www.pixelstalk.net/wp-content/uploads/2016/07/Free-Images-HD-1920x1080.jpg"
+  "http://www.pixelstalk.net/wp-content/uploads/2016/07/Free-Images-HD-1920x1080.jpg",
 ];
 
 function styles_for_container1_texts(index) {
@@ -98,14 +98,6 @@ function styles_for_container1_texts(index) {
 
 for (var i = 0; i <= 22; i++) {
   styles_for_container1_texts(i);
-}
-
-function sleep(ms) {
-  return new Promise((resolve) =>
-    setTimeout(() => {
-      resolve(ms);
-    }, ms)
-  );
 }
 
 // Hidden elements animation on apear
@@ -143,19 +135,18 @@ const top_button = document.querySelector(".top_button");
 top_button.addEventListener("click", function () {
   window.scroll(0, -1000);
 });
-document.addEventListener("wheel", function (event) {
+function check_scroll_for_top_button() {
   if (window.scrollY > 200) {
     top_button.style.display = "grid";
   } else {
     top_button.style.display = "none";
   }
+}
+document.addEventListener("wheel", function (event) {
+  check_scroll_for_top_button();
 });
 document.onmousemove = function (event) {
-  if (window.scrollY > 200) {
-    top_button.style.display = "grid";
-  } else {
-    top_button.style.display = "none";
-  }
+  check_scroll_for_top_button();
   var x = event.pageX;
   var y = event.pageY;
   cursor.style.left = x - cursor.width / 2 + "px";
@@ -188,8 +179,8 @@ function ball_game(element) {
 
 const container4 = document.querySelector(".container4");
 const container4_wave = document.querySelector(".container4_wave");
-const container5_wave = document.querySelector(".container5_wave")
-const container5_wave_shape_fill = container5_wave.querySelector(".shape-fill")
+const container5_wave = document.querySelector(".container5_wave");
+const container5_wave_shape_fill = container5_wave.querySelector(".shape-fill");
 const container4_wave_shape_fill = container4_wave.querySelector(".shape-fill");
 if (ball !== null) {
   ball.addEventListener("mouseover", (e) => {
@@ -229,10 +220,15 @@ function toggle() {
     // change cursor to jojo and add jojos to screen
     cursor.src = "dio.png";
     dio.style.display = "block";
+    dio.setAttribute("draggable", "false");
     pucci.style.display = "block";
+    pucci.setAttribute("draggable", "false");
     jovana.style.display = "block";
+    jovana.setAttribute("draggable", "false");
     jotaro.style.display = "block";
+    jotaro.setAttribute("draggable", "false");
     jolyne.style.display = "block";
+    jolyne.setAttribute("draggable", "false");
     ball.id = "left1000vw"; // Move original ball from ball game with 1000vw
     // Check ball with it new id (left1000vw)
     const ball_after_check = document.querySelector("#left1000vw");
