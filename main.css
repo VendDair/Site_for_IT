@@ -663,16 +663,22 @@ body {
   0% {
     background-color: blue;
   }
-  100% {
+  50% {
     background-color: red;
+  }
+  100% {
+    background-color: orange;
   }
 }
 @keyframes top_button {
   0% {
     background-color: blue;
   }
-  100% {
+  50% {
     background-color: red;
+  }
+  100% {
+    background-color: orange;
   }
 }
 #left1000vw {
