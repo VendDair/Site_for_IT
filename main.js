@@ -294,12 +294,10 @@ container5.style.backgroundPosition = "center";
 container5.style.backgroundSize = "cover";
 
 const amogus = document.querySelector(".amogus");
-var amogus_animation = Math.floor(Math.random() * 3) + 1;
+var amogus_animation = Math.floor(Math.random() * 2) + 1;
 console.log(amogus_animation);
 if (amogus_animation === 1) {
   amogus.style.animation = "10s amogus linear infinite alternate";
 } else if (amogus_animation === 2) {
   amogus.style.animation = "10s amogus1 linear infinite alternate";
-} else if (amogus_animation === 3) {
-  amogus.style.animation = "10s amogus2 linear infinite alternate";
 }
