@@ -156,8 +156,8 @@ document.onmousemove = function (event) {
 
   const angleDeg = angle(mouseX, mouseY, anchorX, anchorY);
 
-  const arrow = document.querySelector("#arrow");
-  arrow.style.transform = `rotate(${90 + angleDeg}deg)`;
+  const arrow = document.querySelector(".arrow");
+  arrow.style.transform = `rotate(${180 + angleDeg}deg)`;
 };
 
 const ball = document.querySelector("#ball");

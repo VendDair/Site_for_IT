@@ -3,6 +3,8 @@
 @import "container4_input.sass"
 @import "container7_neon.sass"
 
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap')
+
 // All mixins
 @mixin image
     width: 30vmin
@@ -250,8 +252,7 @@ body
         position: absolute
         width: 70px
     .arrow
-        color: white
-        font-size: 40px
+        width: 40px
         transition: .2s
 .container4
     height: 100vh
@@ -294,14 +295,14 @@ body
         
 .top_button
     position: fixed
-    color: white
     display: grid
     place-items: center
     align-items: center
-    font-size: 30px
+    padding: 20px
     width: 70px
     height: 70px
     transition: all .5s 
+    transform: rotate(-90deg)
     z-index: 100
     border-radius: 50%
     background-color: blue

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 .custom-shape-divider-bottom-1674066955 {
   position: absolute;
   bottom: 0;
@@ -846,8 +847,7 @@ body {
   width: 70px;
 }
 .follow_arrow .arrow {
-  color: white;
-  font-size: 40px;
+  width: 40px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
@@ -909,18 +909,19 @@ body {
 
 .top_button {
   position: fixed;
-  color: white;
   display: -ms-grid;
   display: grid;
   place-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 30px;
+  padding: 20px;
   width: 70px;
   height: 70px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
   z-index: 100;
   border-radius: 50%;
   background-color: blue;
